@@ -1,0 +1,44 @@
+.card {
+   padding: 25px;
+   font-family: "Urbanist" !important;
+   border-left : "red";
+}
+
+h2 {
+   font-family: "Urbanist" !important;
+}
+
+.box {
+      list-style-type: none;
+}
+
+a .save:focus {
+   outline: none;
+   box-shadow: none;
+}
+
+a .delete:focus {
+   outline: none;
+   box-shadow: none;
+}
+
+table {
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+}
+
+td,
+th {
+   border: 1px solid #dddddd;
+   text-align: left;
+   padding: 8px;
+}
+
+tr:nth-child(even) {
+   background-color: #dddddd;
+}
+
+/* .back-btn {
+   background-color: 084c8b;
+} */
