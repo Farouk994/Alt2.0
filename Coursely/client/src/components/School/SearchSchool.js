@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./UI/School.css";
 
 const SearchSchool = () => {
    const [query, setQuery] = useState("");
@@ -12,32 +13,54 @@ const SearchSchool = () => {
          const { data } = await axios.get(
             `http://localhost:5050/api/school/search-school/${query}`
          );
-         console.log(data);
+         // console.log(data);
          setResult(data);
-      //   console.log(result.data)
+         // console.log(result);
       } catch (error) {
          console.log(error);
       }
    };
    return (
       <div>
-         <form onSubmit={searchSchool} class="form-inline my-2 my-lg-0">
+         <form onSubmit={searchSchool}>
             <input
-               class="form-control mr-sm-2"
                type="search"
-               onChange={(e) => setQuery(e.target.value)}
+               onChange={(e) => {
+                  setQuery(e.target.value);
+                  setResult([]);
+               }}
                value={query}
-               placeholder="Search School or City"
-               ></input>
-            <Link 
-            to={`/school/${result}`}
-            class="btn btn-outline-danger my-2 my-sm-0" type="submit">
-               Search
-            </Link>
+            ></input>
          </form>
+
+         {result.map((r) => {
+            return (
+               <>
+                  <br></br>
+
+                  <div class="col-sm-6">
+                     <div class="card">
+                        <div class="card-body">
+                           <h5 class="card-title">{r.name}</h5>
+
+                           <Link
+                              to={`/school/${r._id}`}
+                              class="btn btn-primary"
+                              style={{ backgroundColor: " #084c8b" }}
+                           >
+                              Get Report
+                           </Link>
+                        </div>
+                     </div>
+                  </div>
+               </>
+            );
+         })}
       </div>
    );
 };
+
+// export default SearchSchool
 
 // TODO: Display school results on search
 export default SearchSchool;

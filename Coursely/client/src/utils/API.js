@@ -1,19 +1,16 @@
-// import axios from "axios";
-// const API = {
-//    getSchools: async function () {
-//       return await axios
-//          .get("http://localhost:5050/api/school/")
-//          .then((res) => {
-//             console.log(res.data);
-//          })
-//          .catch((err) => {
-//             console.log(err);
-//          });
-//    },
-// };
+/* eslint-disable import/no-anonymous-default-export */
+import axios from "axios";
 
-// export default API;
-
-// exports.getSchool = () {
-
-// }
+export default {
+   getSchools: function () {
+      return axios.get("http://localhost:5050/api/school/");
+   },
+   getSchool: function (id) {
+      return axios.get(`http://localhost:5050/api/school/${id}`);
+   },
+   searchSchool: function (query) {
+      return axios.get(
+         `http://localhost:5050/api/school/search-school/${query}`
+      );
+   },
+};

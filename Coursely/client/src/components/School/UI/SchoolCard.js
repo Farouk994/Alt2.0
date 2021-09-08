@@ -2,21 +2,20 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./School.css";
-import Loader from "../../Layout/Loader/Loader"
+import Loader from "../../Layout/Loader/Loader";
+import API from "../../../utils/API";
 
 const SchoolCard = () => {
    const [schools, setSchool] = useState([]);
    const [loading, setLoading] = useState(false);
-  
+
    useEffect(() => {
       setLoading(true);
       setTimeout(() => {
          setLoading(false);
-      }, 1500);
+      }, 1000);
       async function fetchData() {
-         const API = "http://localhost:5050/api/school/";
-         await axios
-            .get(API)
+         API.getSchools()
             .then((res) => {
                setSchool(res.data);
             })
@@ -30,9 +29,7 @@ const SchoolCard = () => {
    return (
       <div>
          {loading ? (
-            <Loader
-               loading={loading}
-            />
+            <Loader loading={loading} />
          ) : (
             schools.map((school, index) => {
                return (
@@ -44,15 +41,16 @@ const SchoolCard = () => {
                               <h2>{school.name}</h2>
                            </li>
                            <li>
-                              {/* <span>Description:</span> */}
                               <strong>{school.description}</strong>
                            </li>
                            <li>
-                             <strong>{school.location}</strong>
+                              <strong>{school.location}</strong>
                            </li>
                            <li>
-                             # of Students:{" "}
-                              <strong style={{ color: "green", fontSize:"30px" }}>
+                              # of Students:{" "}
+                              <strong
+                                 style={{ color: "green", fontSize: "30px" }}
+                              >
                                  {school.students.length}
                               </strong>
                            </li>
@@ -62,7 +60,10 @@ const SchoolCard = () => {
                               <Link
                                  to={`/school/${school._id}`}
                                  className="btn"
-                                 style={{backgroundColor:"#084c8b", color:"white"}}
+                                 style={{
+                                    backgroundColor: "#084c8b",
+                                    color: "white",
+                                 }}
                               >
                                  Get Report
                               </Link>

@@ -108,7 +108,7 @@ exports.search_school = async (req, res) => {
             { name: { $regex: query, $options: "i" } },
             { location: { $regex: query, $options: "i" } },
          ],
-      });
+      }).select("_id name");
       res.json(school);
    } catch (error) {
       res.status(500).send("Server Error, try again");

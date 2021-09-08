@@ -5,6 +5,7 @@ import { PDFExport } from "@progress/kendo-react-pdf";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./UI/School.css";
+import API from "../../utils/API";
 
 const GetSchool = (props) => {
    const { id } = useParams();
@@ -21,7 +22,6 @@ const GetSchool = (props) => {
          progress: undefined,
       });
 
-
    const pdfExportComponent = useRef(null);
 
    const handleExportWithComponent = (event) => {
@@ -29,8 +29,7 @@ const GetSchool = (props) => {
    };
    useEffect(() => {
       async function fetchSchool() {
-         axios
-            .get(`http://localhost:5050/api/school/${id}`)
+         API.getSchool(id)
             .then((res) => {
                setSchool(res.data.school);
                setStudent(res.data.school.students);

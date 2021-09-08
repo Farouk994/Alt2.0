@@ -10,13 +10,7 @@ const Landing = () => {
                <div class="row">
                   <div class="col-xl-6">
                      <h1>Get your report today</h1>
-                     <h2>
-                        You can now download your report instantly and also
-                        receive updates of any promotions
-                     </h2>
-                     <a href="#about" class="btn-get-started scrollto">
-                        Get Started
-                     </a>
+                     <SearchSchool/>
                   </div>
                </div>
             </div>

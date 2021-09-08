@@ -1,7 +1,7 @@
 .card {
    padding: 25px;
    font-family: "Urbanist" !important;
-   border-left : "red";
+   border-left: "red";
 }
 
 h2 {
@@ -9,7 +9,7 @@ h2 {
 }
 
 .box {
-      list-style-type: none;
+   list-style-type: none;
 }
 
 a .save:focus {
@@ -39,6 +39,30 @@ tr:nth-child(even) {
    background-color: #dddddd;
 }
 
-/* .back-btn {
-   background-color: 084c8b;
-} */
+input {
+   margin-top: 280px;
+   border-radius: 50%;
+   width: 40px;
+   cursor: pointer;
+   height: 40px;
+   background-color: white;
+   outline: none;
+   background-image: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-256.png");
+   background-size: 30px;
+   background-position: center;
+   font-size: 18px;
+   color: grey;
+   background-repeat: no-repeat;
+   border: 1px solid grey;
+   transition-property: width, border-radius, background-position,
+      padding-left /*, transform*/;
+   transition-duration: 0.5s;
+}
+input:focus {
+   width: 330px;
+   border-radius: 5px;
+   cursor: text;
+   padding-left: 40px;
+   padding-right: 20px;
+   background-position: 5px;
+}
