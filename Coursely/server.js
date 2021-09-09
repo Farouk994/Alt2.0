@@ -13,6 +13,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("tiny"));
 app.use(cors());
 
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+   app.use(express.static("client/build"));
+ }
+
 app.use("/api/school", require("./routes/school"));
 
 const server = app.listen(PORT, () => {
