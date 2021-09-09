@@ -4,7 +4,7 @@ import BounceLoader from "react-spinners/BounceLoader";
 import { css } from "@emotion/react";
 
 const Loader = () => {
-   let [color, setColor] = useState("#084c8b");
+   let [color] = useState("#084c8b");
    const override = css`
       display: block;
       margin: 0 auto;

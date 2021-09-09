@@ -10,12 +10,12 @@ const Landing = () => {
                <div class="row">
                   <div class="col-xl-6">
                      <h1>Get your report today</h1>
-                     <SearchSchool/>
+                     <SearchSchool />
                   </div>
                </div>
             </div>
          </section>
-         {/* <!-- End Hero --> */}
+
       </div>
    );
 };

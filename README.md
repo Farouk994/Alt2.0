@@ -99,6 +99,10 @@ A first time user opens the application and searches or accesses drop down menu 
   <img src="./Coursely/client/public/images/search.png" alt= "downloaddoc">
 </details>
 
+## App Demo 
+ <img src="./Coursely/client/public/images/Coursely2.0Demo.gif" alt= "downloaddoc">
+</details>
+
 ### Tips
 
 1. You are able to clone this repo or download a zip file to your local machine.

@@ -18,7 +18,6 @@ function Navbar() {
                         to="/"
                         activeClassName="active"
                         className="nav-links"
-                    
                      >
                         Home
                      </NavLink>
@@ -29,14 +28,11 @@ function Navbar() {
                         to="/schools"
                         activeClassName="active"
                         className="nav-links"
-                       
                      >
                         Schools
                      </NavLink>
                   </li>
-               
                </ul>
-              
             </div>
          </nav>
       </>
