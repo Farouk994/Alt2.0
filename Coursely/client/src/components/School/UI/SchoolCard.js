@@ -28,7 +28,7 @@ const SchoolCard = () => {
    return (
       <div>
          {loading ? (
-            <Loader loading={loading} />
+            <Loader loading={true} />
          ) : (
             schools.map((school, index) => {
                return (

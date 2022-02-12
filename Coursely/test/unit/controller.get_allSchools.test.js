@@ -36,5 +36,4 @@ describe("controller.get_allSchools", () => {
       expect(res.statusCode).to.deep.equal(500);
       expect(res._getJSONData()).to.deep.equal("error");
    });
-   
 });

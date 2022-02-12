@@ -10,16 +10,12 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan("tiny"));
-app.use(cors());
+app.use(cors(["http://localhost:3000"]));
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-   app.use(express.static("client/build"));
-   app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-   });
+if (app.get("env") === "development") {
+   app.use(morgan("tiny"));
 }
+
 
 app.use("/api/school", require("./routes/school"));
 
