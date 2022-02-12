@@ -9,17 +9,16 @@ const SchoolCard = () => {
    const [loading, setLoading] = useState(false);
 
    useEffect(() => {
-      setLoading(true);
-      setTimeout(() => {
-         setLoading(false);
-      }, 1000);
-      async function fetchData() {
+         async function fetchData() {
+         setLoading(true);
          API.getSchools()
             .then((res) => {
                setSchool(res.data);
+               setLoading(false)
             })
             .catch((err) => {
                console.log(err);
+               setLoading(false)
             });
       }
       fetchData();
